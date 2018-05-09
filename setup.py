@@ -15,9 +15,8 @@ setup(
     author = 'Simon Willison, Jacob Kaplan-Moss',
     author_email = 'jacob@jacobian.org',
 
-    packages = find_packages('src'),
-    package_dir = {'': 'src'},
-    
+    packages = ['shorturls'],
+
     install_requires = ['setuptools', 'six'],
 
     classifiers = [

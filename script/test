@@ -1,3 +1,0 @@
-#!/bin/sh
-cd shorturls
-exec django-admin.py test --pythonpath=.. --settings=shorturls.testsettings

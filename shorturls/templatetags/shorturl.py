@@ -66,6 +66,7 @@ class RevCanonical(ShortURL):
         else:
             return ''
 
+
 register = template.Library()
 register.tag('shorturl', ShortURL.parse)
 register.tag('revcanonical', RevCanonical.parse)

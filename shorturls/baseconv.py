@@ -57,6 +57,7 @@ class BaseConverter(object):
             decoded = -decoded
         return decoded
 
+
 bin = BaseConverter('01')
 hexconv = BaseConverter('0123456789ABCDEF')
 base62 = BaseConverter(
@@ -81,7 +82,9 @@ class Base32Converter(BaseConverter):
     def to_decimal(self, s):
         return super(Base32Converter, self).to_decimal(s.lower())
 
+
 base32 = Base32Converter()
+
 
 if __name__ == '__main__':
     import doctest

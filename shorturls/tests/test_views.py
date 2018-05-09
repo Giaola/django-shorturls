@@ -31,11 +31,10 @@ class RedirectViewTestCase(TestCase):
         Test a relative redirect when the Sites app isn't installed.
         """
         settings.SHORTEN_FULL_BASE_URL = None
-        response = self.client.get(
-            '/A{0!s}'.format(enc(54321)), HTTP_HOST='example.org')
+        response = self.client.get('/A{0!s}'.format(enc(54321)))
         self.assertEqual(response.status_code, 301)
         self.assertEqual(response['Location'],
-                         'http://example.org/animal/54321/')
+                         'http://testserver/animal/54321/')
 
     def test_redirect_complete_url(self):
         """

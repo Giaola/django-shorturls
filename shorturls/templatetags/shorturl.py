@@ -1,14 +1,12 @@
-from six.moves.urllib.parse import urljoin
-
 from django import template
 from django.conf import settings
-try:
-    from django.core.urlresolvers import reverse, NoReverseMatch
-except ImportError:
-    # Django 2.0
-    from django.urls import reverse, NoReverseMatch
+from django.urls import NoReverseMatch, reverse
 from django.utils.safestring import mark_safe
-from shorturls import default_converter as converter, views
+
+from six.moves.urllib.parse import urljoin
+
+from shorturls import default_converter as converter
+from shorturls import views
 
 
 class ShortURL(template.Node):

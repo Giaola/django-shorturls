@@ -1,7 +1,8 @@
-from django.template import Template, Context
 from django.conf import settings
+from django.template import Context, Template
 from django.test import TestCase, override_settings
-from shorturls.tests.models import Animal, Vegetable, Mineral
+
+from shorturls.tests.models import Animal, Mineral
 
 
 @override_settings(

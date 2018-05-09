@@ -1,10 +1,11 @@
-from six.moves.urllib.parse import urljoin, urlsplit
-
 from django.apps import apps
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponsePermanentRedirect, Http404
+from django.http import Http404, HttpResponsePermanentRedirect
 from django.shortcuts import get_object_or_404
+
+from six.moves.urllib.parse import urljoin, urlsplit
+
 from shorturls import default_converter
 
 

@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.test import TestCase, override_settings
+
 from shorturls.baseconv import base62
 
 

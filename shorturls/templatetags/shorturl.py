@@ -3,10 +3,12 @@ from django.conf import settings
 from django.urls import NoReverseMatch, reverse
 from django.utils.safestring import mark_safe
 
+import six
 from six.moves.urllib.parse import urljoin
 
 from shorturls import default_converter as converter
 from shorturls import views
+from shorturls.models import Link
 
 
 class ShortURL(template.Node):
@@ -27,6 +29,9 @@ class ShortURL(template.Node):
             obj = self.obj.resolve(context)
         except template.VariableDoesNotExist:
             return ''
+
+        if isinstance(obj, six.string_types):
+            obj, _created = Link.objects.get_or_create(url=obj)
 
         try:
             prefix = self.get_prefix(obj)

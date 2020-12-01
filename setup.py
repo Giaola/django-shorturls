@@ -7,7 +7,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "django-shorturls",
+    name = "shorturls",
     version = "2.0.0",
     url = 'https://github.com/bfirsh/django-shorturls',
     license = 'BSD',
